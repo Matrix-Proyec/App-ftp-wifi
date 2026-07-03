@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descarga FTP Wifi</title>
+  <style>
+    /* Estilo general y fuente */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Fondo con imagen de Wi-Fi centrada y con overlay para que el texto se lea bien */
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 5, 0, 0.1)),
+        url('img/ftp.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      background: rgba(255, 165, 0, 0.85); /* naranja */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #002f6c; /* Azul oscuro para contraste */
+      text-shadow: 1px 1px 2px black;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, #ff7f00, #0059b3); /* naranja a azul */
+      border: none;
+      border-radius: 8px;
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 127, 0, 0.6);
+      transition: background 0.3s ease, transform 0.2s ease;
+      user-select: none;
+    }
+    .download-btn:hover {
+      background: linear-gradient(135deg, #ff9c33, #0073e6);
+      transform: scale(1.05);
+      box-shadow: 0 7px 20px rgba(255, 156, 51, 0.8);
+    }
+
+    footer {
+      background: rgba(0,0,0,0.6);
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+      color: #ddd;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Nueva actualización de aplicación FTP wifi
+  </header>
+
+  <main>
+    <button class="download-btn" id="downloadBtn">
+      Descargar aplicación FTP wifi
+    </button>
+  </main>
+
+  <footer>
+    © Juan 2026
+  </footer>
+
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      // URL del archivo en GitHub
+      // Debe ser el link directo al archivo raw para que descargue
+      // Ejemplo: https://github.com/usuario/repositorio/raw/main/app/FTP%20wifi.exe
+      // Reemplaza con tu usuario, repo y rama
+      const url = 'https://github.com/usuario/repositorio/raw/main/app/FTP%20wifi.exe';
+
+      // Crear un enlace temporal para forzar la descarga
+      const link = document.createElement('a');
+      link.href = url;
+      // Nombre del archivo al descargar
+      link.download = 'FTP wifi.exe';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
+</body>
+</html>
